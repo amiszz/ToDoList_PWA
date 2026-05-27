@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#3d2b1f" />
+
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="apple-touch-icon" href="./icons/android-chrome-192x192.png" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+
+  <title>Minhas Tarefas</title>
+</head>
+<body>
+
+  <div id="aplicativo">
+
+    <!-- cabeçalho -->
+    <header id="cabecalho">
+      <div id="cabecalho-esquerda">
+        <h1>Minhas tarefas</h1>
+      </div>
+      <span id="contador-pendentes">0 pendentes</span>
+    </header>
+
+    <!-- o botção de categoria -->
+    <div id="area-nova-categoria">
+      <button id="botao-nova-categoria">
+        <i class="ti ti-plus"></i> Nova categoria
+      </button>
+    </div>
+
+    <!-- os cards de categoria -->
+    <main id="grade-categorias">
+    </main>
+
+    <!-- alerta sem categoria -->
+    <div id="mensagem-vazia">
+      <i class="ti ti-coffee"></i>
+      <p>Ops, nenhuma categoria existente...</p>
+      <p>Vamos criar uma categoria para começar!</p>
+    </div>
+
+    <!-- instalação de app -->
+    <div id="barra-instalar">
+      <span>🖥️  Deseja instalar o app?</span>
+      <button id="botao-instalar">Instalar</button>
+    </div>
+
+  </div>
+
+  <!-- aba de edição da tarefa -->
+  <div id="fundo-modal">
+    <div id="modal-edicao">
+      <h2>Editar tarefa</h2>
+      <input type="text" id="input-edicao" maxlength="80" />
+      <div id="botoes-modal">
+        <button id="botao-cancelar-edicao">Cancelar</button>
+        <button id="botao-salvar-edicao">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>

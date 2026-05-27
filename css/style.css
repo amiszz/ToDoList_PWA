@@ -1,0 +1,444 @@
+/* =============================================
+   RESET E BASE
+============================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #c4a882;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+}
+
+/* =============================================
+   CONTAINER PRINCIPAL
+============================================= */
+#aplicativo {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* =============================================
+   CABEÇALHO
+============================================= */
+#cabecalho {
+  background: #3d2b1f;
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#cabecalho-esquerda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#icone-cabecalho {
+  font-size: 22px;
+}
+
+#cabecalho h1 {
+  color: #f5e6d3;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+#contador-pendentes {
+  font-size: 12px;
+  color: #c4a882;
+}
+
+/* =============================================
+   BOTÃO NOVA CATEGORIA
+============================================= */
+#area-nova-categoria {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#botao-nova-categoria {
+  background: #3d2b1f;
+  color: #f5e6d3;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s;
+}
+
+#botao-nova-categoria:hover {
+  background: #5a3e2b;
+}
+
+/* =============================================
+   GRADE DE CATEGORIAS
+============================================= */
+#grade-categorias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+/* =============================================
+   CARD DE CATEGORIA
+============================================= */
+.card-categoria {
+  background: #f5e6d3;
+  border-radius: 12px;
+  padding: 14px;
+  border: 0.5px solid #b89c7a;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* CABEÇALHO DO CARD */
+.cabecalho-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-nome-categoria {
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid #b89c7a;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #3d2b1f;
+  width: 100%;
+  padding: 2px 4px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.input-nome-categoria::placeholder {
+  color: #b89c7a;
+  font-weight: 400;
+}
+
+.acoes-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.contador-card {
+  background: #3d2b1f;
+  color: #f5e6d3;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.botao-excluir-categoria {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #b89c7a;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.botao-excluir-categoria:hover {
+  color: #8b3a3a;
+}
+
+/* =============================================
+   ADICIONAR TAREFA DENTRO DO CARD
+============================================= */
+.area-adicionar-tarefa {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  background: #e8d5bc;
+  border-radius: 8px;
+  padding: 6px 10px;
+  border: 0.5px solid #b89c7a;
+}
+
+.input-nova-tarefa {
+  background: transparent;
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 13px;
+  color: #3d2b1f;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.input-nova-tarefa::placeholder {
+  color: #9e8060;
+}
+
+.botao-adicionar-tarefa {
+  background: #3d2b1f;
+  color: #f5e6d3;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.botao-adicionar-tarefa:hover {
+  background: #5a3e2b;
+}
+
+/* =============================================
+   TAREFAS
+============================================= */
+.lista-tarefas {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-tarefa {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 0.5px solid #d4b896;
+}
+
+.item-tarefa:last-child {
+  border-bottom: none;
+}
+
+/* Checkbox circular */
+.circulo-check {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid #7a5c3c;
+  flex-shrink: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.circulo-check.concluida {
+  background: #7a5c3c;
+  border-color: #7a5c3c;
+}
+
+.circulo-check.concluida::after {
+  content: '';
+  width: 7px;
+  height: 4px;
+  border-left: 2px solid #f5e6d3;
+  border-bottom: 2px solid #f5e6d3;
+  transform: rotate(-45deg) translate(1px, -1px);
+  display: block;
+}
+
+.texto-tarefa {
+  font-size: 13px;
+  color: #3d2b1f;
+  flex: 1;
+}
+
+.texto-tarefa.concluida {
+  text-decoration: line-through;
+  color: #9e8060;
+}
+
+.icones-tarefa {
+  display: flex;
+  gap: 6px;
+}
+
+.icones-tarefa i {
+  font-size: 14px;
+  color: #9e8060;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.icones-tarefa i:hover {
+  color: #3d2b1f;
+}
+
+.icones-tarefa .ti-trash:hover {
+  color: #8b3a3a;
+}
+
+/* MENSAGEM CARD VAZIO */
+.mensagem-card-vazio {
+  font-size: 12px;
+  color: #9e8060;
+  text-align: center;
+  padding: 8px 0;
+}
+
+/* =============================================
+   MENSAGEM TELA VAZIA
+============================================= */
+#mensagem-vazia {
+  text-align: center;
+  padding: 40px 0;
+  color: #7a5c3c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+#mensagem-vazia i {
+  font-size: 36px;
+  color: #b89c7a;
+}
+
+#mensagem-vazia p {
+  font-size: 14px;
+}
+
+/* =============================================
+   BARRA DE INSTALAÇÃO PWA
+============================================= */
+#barra-instalar {
+  background: #3d2b1f;
+  border-radius: 12px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  display: none;
+}
+
+#barra-instalar span {
+  font-size: 13px;
+  color: #c4a882;
+}
+
+#botao-instalar {
+  background: #c4a882;
+  color: #3d2b1f;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#botao-instalar:hover {
+  background: #f5e6d3;
+}
+
+/* =============================================
+   MODAL DE EDIÇÃO
+============================================= */
+#fundo-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(61, 43, 31, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+#modal-edicao {
+  background: #f5e6d3;
+  border-radius: 12px;
+  padding: 24px;
+  width: 90%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 0.5px solid #b89c7a;
+}
+
+#modal-edicao h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #3d2b1f;
+}
+
+#input-edicao {
+  background: #e8d5bc;
+  border: 0.5px solid #b89c7a;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #3d2b1f;
+  outline: none;
+  width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#botoes-modal {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+#botoes-modal button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#botao-cancelar-edicao {
+  background: #d4b896;
+  color: #3d2b1f;
+}
+
+#botao-cancelar-edicao:hover {
+  background: #b89c7a;
+}
+
+#botao-salvar-edicao {
+  background: #3d2b1f;
+  color: #f5e6d3;
+}
+
+#botao-salvar-edicao:hover {
+  background: #5a3e2b;
+}
+
+/* =============================================
+   RESPONSIVO — CELULAR
+============================================= */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  #grade-categorias {
+    grid-template-columns: 1fr;
+  }
+}
